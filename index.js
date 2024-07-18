@@ -40,3 +40,7 @@ function startPage() {
     setTimeout(startHome, 1000);
 };
 
+function startPage() {
+    const enterButton = document.getElementById("enter-container");
+    enterButton.style.transition = "opacity 1s ease-in-out";
+    enterButton.style.opacity = 0;
