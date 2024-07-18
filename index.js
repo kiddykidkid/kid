@@ -2,6 +2,21 @@ let transitionActive = false;
 var song = document.getElementById("song");
 var current_page = "main";
 
+function startHome() {
+    if (transitionActive) return;
+    transitionActive = true;
+
+    const displayText = document.querySelector('.display-text');
+    displayText.style.opacity = 0;
+
+    setTimeout(() => {
+        displayText.innerHTML = getRandomSentence();
+        displayText.style.opacity = 1;
+        transitionActive = false;
+    }, 2000);
+}
+
+
 function startPage() {
     const enterButton = document.getElementById("enter-container");
     enterButton.style.transition = "opacity 1s ease-in-out";
